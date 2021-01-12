@@ -67,38 +67,38 @@ int isEmpty(nodetype* dq) {
 
 
 void pushF(nodetype* dq, element item) {
-	node* new = (node*)malloc(sizeof(node));
-	new->data = item;
+	node* newnode = (node*)malloc(sizeof(node));
+	newnode->data = item;
 	if (dq->front == NULL) {
-		dq->front = new;
-		dq->rear = new;
-		new->llink = NULL;
-		new->rlink = NULL;
+		dq->front = newnode;
+		dq->rear = newnode;
+		newnode->llink = NULL;
+		newnode->rlink = NULL;
 	}
 	else {
-		dq->front->llink = new;
-		new->rlink = dq->front;
-		new->llink = NULL;
-		dq->front = new;
+		dq->front->llink = newnode;
+		newnode->rlink = dq->front;
+		newnode->llink = NULL;
+		dq->front = newnode;
 	}
 	printf("front »ğÀÔ %c >>", item);
 }
 
 //rear µÚ¿¡ item
 void pushR(nodetype* dq, element item) {
-	node* new = (node*)malloc(sizeof(node));
-	new->data = item;
+	node* newnode = (node*)malloc(sizeof(node));
+	newnode->data = item;
 	if (dq->rear == NULL) {
-		dq->front = new;
-		dq->rear = new;
-		new->rlink = NULL;
-		new->llink = NULL;
+		dq->front = newnode;
+		dq->rear = newnode;
+		newnode->rlink = NULL;
+		newnode->llink = NULL;
 	}
 	else {
-		dq->rear->rlink = new;
-		new->llink = dq->rear;
-		new->rlink = NULL;
-		dq->rear = new;
+		dq->rear->rlink = newnode;
+		newnode->llink = dq->rear;
+		newnode->rlink = NULL;
+		dq->rear = newnode;
 	}
 	printf("rear  »ğÀÔ %c >>", item);
 }

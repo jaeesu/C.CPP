@@ -10,6 +10,7 @@
 
 //위에서 내림 버튼 누르면 올라가는 함수
 
+
 void button(nodetype* dq,int, int);
 
 void Downfloor(int*, int);
@@ -17,35 +18,6 @@ void Downfloor(int*, int);
 void Upfloor(int*, int);
 
 void Number(nodetype* dq, int, int);
-
-void button(nodetype* dq, int floor, int to) {
-	pushF(dq, to);
-	printdeque(dq);
-	if (floor < to) Downfloor(floor, to);
-	else Upfloor(floor, to);
-}
-
-void Downfloor(int* floor, int to) {
-	for (int i = floor; i <= to; i++) {
-		floor++;
-	}
-	printf("end to %d", to);
-}
-
-void Upfloor(int* floor, int to) {
-	for (int i = floor; i >= to; i--) {
-		floor--;
-	}
-	printf("end to %d", to);
-}
-
-void Number(nodetype* dq, int floor, int to) {
-	pushF(dq, to);
-	if (floor < to) Downfloor(floor, to);
-	else Upfloor(floor, to);
-}
-
-
 
 
 
