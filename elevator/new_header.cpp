@@ -2,6 +2,7 @@
 
 #include<iostream>
 #include<stdlib.h>
+using namespace std;
 #include "new_header.h"
 
 //노드 설정
@@ -14,10 +15,10 @@ deq::deq() {
 //공백 검사
 int deq::isEmpty() {
 	if (this->front == NULL) {
-		printf("Empty!");
+		cout << "empty";
 		return 1;
 	}
-	else return 0;
+	return 0;
 }
 
 
@@ -36,7 +37,7 @@ void deq::pushF(element item) {
 		newnode->llink = NULL;
 		this->front = newnode;
 	}
-	printf("front 삽입 %c >>", item);
+	cout << "front 삽입 %c >>"+item;
 }
 
 //rear 뒤에 item
@@ -55,7 +56,7 @@ void deq::pushR(element item) {
 		newnode->rlink = NULL;
 		this->rear = newnode;
 	}
-	printf("rear  삽입 %c >>", item);
+	cout << "rear  삽입 %c >>"+item;
 }
 
 //front 삭제 반환
@@ -74,7 +75,7 @@ element deq::popF() {
 			this->front->llink = NULL;
 		}
 		free(old);
-		printf("front 삭제 %c >>", item);
+		cout << "front 삭제 %c >>"+item;
 		return item;
 	}
 }
@@ -95,7 +96,7 @@ element deq::popR() {
 			this->rear->rlink = NULL;
 		}
 		free(old);
-		printf("rear  삭제 %d >>", item);
+		cout << "rear  삭제 %d >>"+item;
 
 		return item;
 	}
@@ -105,13 +106,13 @@ element deq::popR() {
 element deq::peekF() {
 	element item;
 	if (this->isEmpty()) {
-		printf("peek Front item : none\n");
+		cout << "peek Front item : none\n";
 		return 0;
 	}
 
 	else {
 		item = this->front->data;
-		printf("peek Front item : %d\n", item);
+		cout << "peek Front item : %d\n"+item;
 		return item;
 	}
 }
@@ -120,13 +121,13 @@ element deq::peekF() {
 element deq::peekR() {
 	element item;
 	if (this->isEmpty()) {
-		printf("peek  Rear item : none\n");
+		cout << "peek  Rear item : none\n";
 		return 0;
 	}
 
 	else {
 		item = this->rear->data;
-		printf("peek  Rear item : %d\n", item);
+		cout << "peek  Rear item : %d\n"+item;
 		return item;
 	}
 }
@@ -139,5 +140,5 @@ void deq::printdeque() {
 		printf("%2d", temp->data);
 		temp = temp->rlink;
 	}
-	printf(" ]\n");
+	cout << " ]\n";
 }
